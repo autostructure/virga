@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/', 'PagesController@index');
 Route::get('/survey', 'PagesController@survey');
+Route::get('/blade', 'PagesController@blade');
 
 // Route::get('main', function(){
 // 	return view('main');

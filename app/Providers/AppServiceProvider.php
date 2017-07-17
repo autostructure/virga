@@ -16,10 +16,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $age = Carbon::createFromDate(1983, 3, 25) ->age;
-        View::share('age', $age);
-        Schema::defaultStringLength(191);
-        View::share('myname', 'MTLaney');
         //
     }
 
