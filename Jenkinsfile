@@ -1,7 +1,13 @@
 node {
 	checkout scm
 
-	image = docker.build('artifactory.autostructure.io:3000/virga:canary', '--pull .')
+  stage 'build' {
+	  image = docker.build('artifactory.autostructure.io:3000/virga:canary', '--pull .')
+  }
 
-	image.run('-p 9001:8081')
+  stage 'startup container' {
+	  sh 'docker rm -f virga'
+
+    image.run('-p 9001:80 --name virga')
+	}
 }
