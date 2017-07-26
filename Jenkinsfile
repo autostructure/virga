@@ -6,7 +6,7 @@ node {
     }
 
     stage('deply') {
-	      sh 'docker rm -f virga'
+	      sh 'docker rm -f virga || true'
 
         image.run('-p 9001:80 --name virga')
 	  }
